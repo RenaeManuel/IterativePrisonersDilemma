@@ -1,4 +1,5 @@
 from __future__ import print_function
+import imp
 
 ##### 
 # Computer Science and Software Engineering
@@ -45,7 +46,7 @@ modules = [example0, example1, example2, example3, example4, example5, example6,
 team0, team1, team2, team3, team4, team5, team6, team7, team8, team9, team10, 
 team11, team12, team13, team14]
 for module in modules:
-    reload(module)
+    imp.reload(module)
     print ('reloaded',module)
     for required_variable in ['team_name', 'strategy_name', 'strategy_description']:
         if not hasattr(module, required_variable):
@@ -270,7 +271,7 @@ def make_section2(modules, scores):
                               'P'+str(index),
                               str(sum(scores[index])/len(modules)),
                               str(modules[index].strategy_name)))
-    section2_list.sort(key=lambda x: int(x[2]), reverse=True)
+    section2_list.sort(key=lambda x: float(x[2]), reverse=True)
     
     # Generate one string per team
     # Rockettes (P1):  -500 points with Backstabber
