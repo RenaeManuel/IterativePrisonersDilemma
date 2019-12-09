@@ -34,6 +34,7 @@ import imp
 import random
 import os.path              
     
+import example0, example1
 import team0, team1, team2, team3, team4
 import team5, team6, team7, team8, team9
 import team10, team11, team12, team13, team14
