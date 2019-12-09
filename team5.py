@@ -9,13 +9,16 @@
 team_name = 'potential' # Only 10 chars displayed.
 strategy_name = ''
 strategy_description = 'How does this strategy decide?'
-    
+
+collude = -3
+betray = -2
+   
 def move(my_history, their_history, my_score, their_score):
    
     global betray
     global collude
     
-     if their_history == 'c' and betray%4 == 0 and collude%4 == 0:
+    if their_history == 'c' and betray == 0 and collude == 4:
       collude += 1
       return 'b'
     elif their_history == 'c' and betray%4 == 0 and not collude%4 == 0:
